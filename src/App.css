@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.scrollbar_none {
+  scrollbar-width: none;
+}
+
+body {
+  background-color: #03161e;
+}
