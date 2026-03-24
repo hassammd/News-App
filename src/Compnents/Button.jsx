@@ -1,7 +1,9 @@
-const Button = ({ category_name }) => {
+const Button = ({ category_name, categoryHandler, value }) => {
   return (
     <>
-      <button className="btn btn-primary uppercase">{category_name}</button>
+      <button onClick={categoryHandler} className="btn btn-primary uppercase">
+        {category_name}
+      </button>
     </>
   );
 };

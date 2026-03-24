@@ -1,3 +1,5 @@
+import { useNewsContext } from "./NewsContext";
+
 const Footer = () => {
   return (
     <>

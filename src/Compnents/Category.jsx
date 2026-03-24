@@ -1,12 +1,27 @@
+import api from "../config/axios";
 import Button from "./Button";
+import { useNewsContext } from "./NewsContext";
 
 const Category = () => {
   const categories = ["general", "health", "science", "sports", "technology"];
-  return categories.map((items) => {
+  const { news, setNews, fetchNews } = useNewsContext();
+
+  const categoryHandler = async (e) => {
+    const cat = e.target.value;
+
+    const data = await fetchNews(`everything/?q=${cat}`);
+    console.log("this is from category", data);
+    setNews(data.articles);
+  };
+  return categories.map((items, index) => {
     return (
-      <>
-        <Button category_name={items} />
-      </>
+      <button
+        value={items}
+        onClick={categoryHandler}
+        className="btn btn-primary uppercase"
+      >
+        {items}
+      </button>
     );
   });
 };
